@@ -1,0 +1,14 @@
+input {
+    padding-left: 10px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    margin-bottom: 5px;
+    text-decoration: underline 2px #655A7C;
+}

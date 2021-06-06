@@ -1,0 +1,80 @@
+.login-form {
+  background-color: rgb(171, 146, 191, 0.6);
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-style: italic;
+  font-weight: 700;
+  color: 070707;
+  border: 5px solid #655a7c;
+  border-radius: 50px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  width: 90%;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button {
+    top: 50%;
+    left: 50%;
+    width: 170px;
+    height: 40px;
+    line-height: 1;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 3px solid #655a7c;
+    background: #fff;
+    color: #655a7c;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.35s;
+
+  /* font-family: "Ubuntu", sans-serif;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 170px;
+  height: 40px;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 3px solid #8c82fc;
+  background: #fff;
+  color: #8c82fc;
+  border-radius: 40px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.35s; */
+}
+
+.submit-button:hover {
+  background: #655a7c;
+  color: #fff;
+}
