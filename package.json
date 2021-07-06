@@ -1,14 +1,12 @@
 {
-  "name": "test-webpack-ui",
+  "name": "chat-ui",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple chat-ui for users to login and get chatting",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "lint": "eslint src --ext .jsx --ext .js",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
   },
   "author": "Dylan Irmak",
   "license": "ISC",
