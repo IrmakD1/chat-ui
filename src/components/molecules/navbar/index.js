@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import _ from "lodash";
+import { v4 as uuidv4 } from 'uuid';
 import chatIcon from "../../../assets/icons/chat-icon.png";
 import hamburgerMenu from "../../../assets/icons/hamburger-icon.png";
 import closeMenuIcon from "../../../assets/icons/close-menu.png";
@@ -18,7 +19,7 @@ const links = [
   }
 ];
 
-const NavBar = ({ loggedIn, handleLogin }) => {
+const NavBar = ({ loggedIn, handleLogOut, history }) => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -35,13 +36,13 @@ const NavBar = ({ loggedIn, handleLogin }) => {
         return _.map(newLinkArray, (linkItem) => {
             if(linkItem.route === '/login') {
                 return (
-                    <li className="nav-item" onClick={handleLogin}>
+                    <li className="nav-item" onClick={handleLogOut} key={uuidv4()}>
                     <NavItem text={linkItem.text} route={linkItem.route} />
                     </li>
                 )
             }
             return (
-                <li className="nav-item" >
+                <li className="nav-item" key={uuidv4()}>
                 <NavItem text={linkItem.text} route={linkItem.route} />
                 </li>
             )
@@ -52,13 +53,13 @@ const NavBar = ({ loggedIn, handleLogin }) => {
         return _.map(newLinkArray, (linkItem) => {
             if(linkItem.route === '/login') {
                 return (
-                    <li className="nav-item" onClick={handleLogin}>
+                    <li className="nav-item" key={uuidv4()}>
                     <NavItem text={linkItem.text} route={linkItem.route} />
                     </li>
                 )
             }
             return (
-                <li className="nav-item" >
+                <li className="nav-item" key={uuidv4()}>
                 <NavItem text={linkItem.text} route={linkItem.route} />
                 </li>
             )

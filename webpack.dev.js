@@ -14,15 +14,21 @@ module.exports = merge(common, {
   // Spin up a server for quick development
   devServer: {
     historyApiFallback: true,
-    contentBase: paths.build,
+    contentBase: paths.src,
     open: true,
     compress: true,
     hot: true,
-    port: 8080,
+    port: 9000,
   },
 
   plugins: [
     // Only update what has changed on hot reload
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env':{
+        'NODE_ENV': JSON.stringify('development'),
+        'CHAT_SERVICE_URL': JSON.stringify('http://localhost:8080')
+      }
+    }),
   ],
 });
