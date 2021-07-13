@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as userSelectors from '../selectors/users'
 
-
-console.log('Whooooooooooooo!');
-console.log(process.env.CHAT_SERVICE_URL);
-
 class Home extends Component { 
 
     componentDidMount() {

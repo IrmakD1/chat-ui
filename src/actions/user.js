@@ -27,5 +27,5 @@ export const handleAddUser = (loginDetails) => async (dispatch) => {
 }
 
 export const handleRemoveUser = () => (dispatch) => {
-
+    dispatch(removeUser())
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as userActions from '../actions/user'
+import * as userSelectors from '../selectors/users'
 import { LoginForm } from '../components/molecules'
 import './styles.css'
 
@@ -13,32 +14,33 @@ class Login extends Component {
     }
 
     handleChange = (event, type) => {
-        console.log('handleChange type: ', type)
         this.setState(() => ({
             [`${type}`]: event.target.value
         }))
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault()
 
         const { username, password } = this.state
-        const { handleAddUser } = this.props
+        const { history, handleAddUser } = this.props
 
-        handleAddUser({ username, password })
+        await handleAddUser({ username, password })
 
-        this.setState = (() => ({
+        this.setState(() => ({
             username: '',
             password: ''
         }))
+
+        const { user } = this.props
+
+        if(user) history.push('/')
     }
 
     render() {
 
         const { handleAddUser } = this.props
         const { username, password } = this.state
-
-        console.log('Login form state: ', this.state)
 
         return (
             <div className='page-body'>
@@ -56,7 +58,7 @@ class Login extends Component {
 }
 
 const mapStateToProps = (state) => ({
-
+    user: userSelectors.getUserDetails(state)
 })
 
 export default connect(mapStateToProps, userActions)(Login)

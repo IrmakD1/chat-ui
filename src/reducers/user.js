@@ -1,4 +1,5 @@
-import { ADD_USER } from '../actions/user'
+import { ADD_USER, REMOVE_USER } from '../actions/user'
+
 
 
 const user = (state = null, action) => {
@@ -6,8 +7,10 @@ const user = (state = null, action) => {
         case ADD_USER : 
             return {
                 ...state,
-                user: action.user
+                profile: action.user
             }
+        case REMOVE_USER : 
+            return null
         default: 
             return state
     }

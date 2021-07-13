@@ -20,7 +20,6 @@
 }
 
 .nav-button-container {
-
     display: flex;
     align-items: center;
 }
@@ -90,5 +89,7 @@ ul {
 .nav-link {
     text-decoration: inherit;
     color: inherit;
+    height: 100%;
+    padding-top: 109px;
 }
 

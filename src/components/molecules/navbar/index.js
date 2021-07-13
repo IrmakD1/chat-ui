@@ -19,7 +19,7 @@ const links = [
   }
 ];
 
-const NavBar = ({ loggedIn, handleLogOut, history }) => {
+const NavBar = ({ loggedIn, handleLogOut }) => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
@@ -29,6 +29,8 @@ const NavBar = ({ loggedIn, handleLogOut, history }) => {
   const changeMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  console.log('//////////////loggedIn: ', loggedIn)
 
   const renderNavItems = () => {
     if(loggedIn) {

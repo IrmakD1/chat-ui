@@ -6,7 +6,9 @@ const NavItem = ({ text, route }) => {
     return (
         <Fragment>
             <Link className="nav-link" to={route}>
-              {text}
+                <div className="nav-link-text">
+                    {text}
+                </div>  
             </Link>
         </Fragment>
     )
